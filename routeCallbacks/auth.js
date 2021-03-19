@@ -8,7 +8,7 @@ const JWT_SECRET = "sjdjfasoivoiqjwso0892394019@#%@#%^wisjdfla";
 module.exports = function auth(req,res){
     
     const token = req.cookies.jwt;
-    console.log(token);
+    // console.log(token);
     
     jwt.verify(token,JWT_SECRET,(err,payload)=>{
         if(err){
@@ -17,7 +17,7 @@ module.exports = function auth(req,res){
             
         }
         else{
-            console.log(payload);
+            // console.log(payload);
             
             res.send({condition:true,payload:payload});
           

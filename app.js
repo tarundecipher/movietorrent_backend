@@ -7,6 +7,8 @@ var signUp = require('./routeCallbacks/signUp');
 var login = require('./routeCallbacks/login');
 var auth = require('./routeCallbacks/auth');
 var logout = require('./routeCallbacks/logout');
+const comments = require('./routeCallbacks/comment');
+const getComments = require('./routeCallbacks/getcomments');
     
 
 var app = express();
@@ -43,7 +45,8 @@ app.get('/auth',auth);
 app.post("/signUp",signUp);
 app.post("/login",login);
 app.get('/logout',logout);
-
+app.post('/comments',comments);
+app.get('/comments/:id',getComments);
 
 
 
